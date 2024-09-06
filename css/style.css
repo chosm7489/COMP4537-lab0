@@ -1,0 +1,11 @@
+#buttonContainer {
+  position: relative;
+  height: 100vh;
+}
+
+.button {
+  height: 5em;
+  width: 10em;
+  display: inline-block;
+  background-color: #000; /* default color, will be overwritten by JavaScript */
+}
