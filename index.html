@@ -2,14 +2,20 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <script src="./js/script.js"></script>
   </head>
   <body>
     <p>How many buttons to create?</p>
 
     <input type="number" id="number" name="number" min="3" max="7" />
-    <button onclick="createButtons()">Go</button>
+    <button
+      onclick="game.createButtons(document.getElementById('number').value)"
+    >
+      Go
+    </button>
 
     <div id="buttonContainer"></div>
+
+    <script src="./js/script.js"></script>
+    <script src="./lang/messages/en/user.js"></script>
   </body>
 </html>
