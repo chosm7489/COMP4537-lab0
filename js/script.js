@@ -109,8 +109,11 @@ class Game {
   getRandomPosition(element) {
     var buttonWidth = parseFloat(getComputedStyle(element).width);
     var buttonHeight = parseFloat(getComputedStyle(element).height);
-    var x = window.innerWidth - buttonWidth;
-    var y = window.innerHeight - buttonHeight;
+    var rootFontSize = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
+    );
+    var x = window.innerWidth - buttonWidth - 11 * rootFontSize; // Subtract button width
+    var y = window.innerHeight - buttonHeight - 6 * rootFontSize; // Subtract button height
     var randomX = Math.floor(Math.random() * x);
     var randomY = Math.floor(Math.random() * y);
     return [randomX, randomY];
