@@ -1,3 +1,5 @@
+// Assistance provided by ChatGPT for code optimization.
+
 class Button {
   constructor(order) {
     this.order = order;
@@ -131,7 +133,7 @@ class Game {
   resetButtons() {
     const buttons = this.buttonContainer.buttons;
     buttons.forEach((button) => {
-      button.element.innerHTML = ""; // Hide the numbers again after wrong order
+      button.element.innerHTML = button.element.dataset.order; // Reveal the numbers after wrong order
     });
   }
 
@@ -150,5 +152,10 @@ class Game {
 const game = new Game();
 document.getElementById("startButton").onclick = () => {
   const num = parseInt(document.getElementById("number").value);
-  game.createButtons(num);
+  if (num < 3 || num > 7) {
+    alert("Please enter a number between 3 and 7.");
+    return;
+  } else {
+    game.createButtons(num);
+  }
 };
